@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from './navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [NavbarComponent, RouterOutlet, CommonModule,],
+  template: `
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  `,
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'casa-cultura';
-}
+export class AppComponent {}
