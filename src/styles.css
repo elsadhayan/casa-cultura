@@ -3,6 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+   font-family: 'Montserrat', sans-serif;
 }
 .footer-toolbar {
   position: fixed;
@@ -15,22 +16,6 @@ html, body {
   display: flex;
   justify-content: center;
   z-index: 1000;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
-router-outlet + * {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-body, html {
-  font-family: 'Montserrat', sans-serif;
 }
 
 

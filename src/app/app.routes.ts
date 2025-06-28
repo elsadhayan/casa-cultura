@@ -1,18 +1,17 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { InfoEmpresaComponent } from './page/info-empresa/info-empresa.component';
-import { InscripcionesComponent } from './page/inscripciones/inscripciones.component';
+
 import { CrearcuentaComponent } from './page/crearcuenta/crearcuenta.component';
 import { InicioSesionComponent } from './page/inicio-sesion/inicio-sesion.component';
+import { Cuatrimestral2Component } from './page/inscripciones/cuatrimestral2/cuatrimestral2.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path:'nosotros', component:InfoEmpresaComponent
-  },
-  {
-    path:'inscripciones',component:InscripcionesComponent
   },
   {
     path:'registro',component:CrearcuentaComponent
@@ -48,6 +47,16 @@ export const routes: Routes = [
 {
   path:'talleres/dibujo-pintura',loadComponent:()=>import('./pages/talleres/dibujo-pintura/dibujo-pintura.component').then(m =>m.DibujoPinturaComponent)
 
-}
+},
+{
+  path: 'inscripciones/verano',
+  loadComponent: () => import('./page/inscripciones/verano/verano.component').then(m => m.VeranoComponent)
+},
+{
+  path: 'inscripciones/cuatrimestral',
+  loadComponent: () => import('./page/inscripciones/cuatrimestral/cuatrimestral.component').then(m => m.CuatrimestralComponent)
+},
+{ path: 'inscripciones/reinscripciones/cuatrimestral2', component:Cuatrimestral2Component }
+
 
 ];

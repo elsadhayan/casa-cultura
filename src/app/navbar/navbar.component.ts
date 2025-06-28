@@ -41,4 +41,11 @@ export class NavbarComponent {
     { nombre: 'Marimba', ruta: '/talleres/marimba', icono: 'queue_music' },
     { nombre: 'Dibujo y Pintura', ruta: '/talleres/dibujo-pintura', icono: 'palette' },
   ];
+  inscripciones = [
+  { nombre: 'Curso de verano', ruta: '/inscripciones/verano', icono: 'wb_sunny' },
+  { nombre: 'Periodo cuatrimestral', ruta: '/inscripciones/cuatrimestral', icono: 'event' },
+
+];
+
+
 }

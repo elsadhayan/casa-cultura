@@ -20,12 +20,43 @@
     </mat-menu>
 
     <a mat-button routerLink="/nosotros" routerLinkActive="activo-link">Acerca de nosotros</a>
-    <a mat-button routerLink="/inscripciones" routerLinkActive="activo-link">Inscripciones</a>
+
+    <button mat-button [matMenuTriggerFor]="menuInscripciones" class="boton-talleres">
+  INSCRIPCIONES <mat-icon>expand_more</mat-icon>
+</button>
+
+<mat-menu #menuInscripciones="matMenu" class="custom-menu">
+
+  <button mat-menu-item [routerLink]="'/inscripciones/verano'">
+    <mat-icon>wb_sunny</mat-icon>
+    <span>Curso de verano</span>
+  </button>
+  <mat-divider></mat-divider>
+
+
+  <button mat-menu-item [routerLink]="'/inscripciones/cuatrimestral'">
+    <mat-icon>event</mat-icon>
+    <span>Periodo cuatrimestral</span>
+  </button>
+  <mat-divider></mat-divider>
+
+
+  <button mat-menu-item [matMenuTriggerFor]="submenuReinscripciones">
+    <mat-icon>loop</mat-icon>
+    <span>Reinscripciones</span>
+  </button>
+</mat-menu>
+
+<mat-menu #submenuReinscripciones="matMenu" class="custom-menu">
+  <button mat-menu-item [routerLink]="'/inscripciones/reinscripciones/cuatrimestral2'">
+    <mat-icon>event</mat-icon>
+    <span>Periodo cuatrimestral</span>
+  </button>
+</mat-menu>
+
     <a mat-button routerLink="/registro" routerLinkActive="activo-link">Crear cuenta</a>
     <a mat-button routerLink="/login" routerLinkActive="activo-link">Iniciar sesión</a>
   </div>
-
-
   <mat-icon class="icono-menu" (click)="toggleMenu()">menu</mat-icon>
 </mat-toolbar>
 
@@ -35,6 +66,10 @@
 <button mat-button [matMenuTriggerFor]="menuTalleres" class="boton-talleres">
   TALLERES <mat-icon>expand_more</mat-icon>
 </button>
+<button mat-button [matMenuTriggerFor]="menuInscripciones" class="boton-talleres">
+  INSCRIPCIONES <mat-icon>expand_more</mat-icon>
+</button>
+
 
   <a mat-button routerLink="/nosotros" (click)="toggleMenu()">Acerca de nosotros</a>
   <a mat-button routerLink="/inscripciones" (click)="toggleMenu()">Inscripciones</a>
